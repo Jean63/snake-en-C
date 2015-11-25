@@ -10,4 +10,11 @@ int direction()
     int touche;
     touche=getch();
     if{ (touche==KEY_UP)
-    
+    y=y+1
+    }
+    if{ (touche==KEY_DOWN)
+    y=y-1
+    }
+    if{ (touche==KEY_DOWN)
+    y=y-1
+    }
