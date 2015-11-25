@@ -25,7 +25,7 @@ while (bouclefleche==0)
 
     if(c==72)
     {
-        y==y+1;
+        y=y+1;
         printf("valeur de y : %d\n",y);
         c=0;
         c=getch();
@@ -33,13 +33,39 @@ while (bouclefleche==0)
         {
         c = getch();
         }
-        y=y+1;
     }
     if(c==80)
     {
-        y=(y-1);
+        y=y-1;
         printf("valeur de y : %d\n",y);
         c=0;
+        c=getch();
+        if(c==0 || c==224)
+        {
+        c = getch();
+        }
+    }
+        if(c==77)
+    {
+        x=x+1;
+        printf("valeur de x : %d\n",x);
+        c=0;
+        c=getch();
+        if(c==0 || c==224)
+        {
+        c = getch();
+        }
+    }
+        if(c==75)
+    {
+        x=x-1;
+        printf("valeur de x : %d\n",x);
+        c=0;
+        c=getch();
+        if(c==0 || c==224)
+        {
+        c = getch();
+        }
     }
 }
 }
