@@ -1,23 +1,45 @@
-#define FLECHE_HAUT 0x01
-#define FLECHE_BAS 0x02
-#define FLECHE_GAUCHE 0x03
-#define FLECHE_DROITE 0x04
+#include <stdio.h>
+#include <stdlib.h>
 
-int direction()
+int main()
 {
-    int x;
+    int c;
     int y;
-    int touche;
-    touche=getch();
-    if{ (touche==KEY_UP)
-    y=y+1
+    int x;
+    int bouclefleche;
+
+    c=0;
+    x=0;
+    y=0;
+    bouclefleche=0;
+
+    printf("taper une touche\n");
+    c=getch() ;
+    if(c==0 || c==224)// c correspond à une touche étendue et on doit récupérer le 2nd code renvoyé
+    {
+    c = getch() ; // 2nd code récupéré
+    printf("touche : %d",c);
     }
-    if{ (touche==KEY_DOWN)
-    y=y-1
+while (bouclefleche==0)
+{
+
+    if(c==72)
+    {
+        y==y+1;
+        printf("valeur de y : %d\n",y);
+        c=0;
+        c=getch();
+        if(c==0 || c==224)
+        {
+        c = getch();
+        }
+        y=y+1;
     }
-    if{ (touche==KEY_RIGHT)
-    x=x+1
+    if(c==80)
+    {
+        y=(y-1);
+        printf("valeur de y : %d\n",y);
+        c=0;
     }
-    if{ (touche==KEY_LEFT)
-    x=x-1
-    }
+}
+}
