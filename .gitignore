@@ -15,6 +15,9 @@ int direction()
     if{ (touche==KEY_DOWN)
     y=y-1
     }
-    if{ (touche==KEY_DOWN)
-    y=y-1
+    if{ (touche==KEY_RIGHT)
+    x=x+1
+    }
+    if{ (touche==KEY_LEFT)
+    x=x-1
     }
