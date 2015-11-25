@@ -4,6 +4,10 @@
 #define FLECHE_DROITE 0x04
 
 int direction()
+{
+    int x;
+    int y;
     int touche;
     touche=getch();
-    if (touche==KEY_UP
+    if{ (touche==KEY_UP)
+    
