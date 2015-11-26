@@ -68,4 +68,5 @@ while (bouclefleche==0)
         }
     }
 }
+#recuperer les abscisses et les ordonée pour la creation d'un point
 }
