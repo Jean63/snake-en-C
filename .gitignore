@@ -3,30 +3,34 @@
 
 int main()
 {
+    typedef struct Coordonnees Coordonnees;
+    struct Coordonnees
+    {
+        int x;//abscisses
+        int y;//Orodnnnées
+    };
+
     int c;
     int y;
     int x;
     int bouclefleche;
+    Coordonnees point;
 
     c=0;
-    x=0;
-    y=0;
+    Coordonnees point = {0, 0};
     bouclefleche=0;
 
-    printf("taper une touche\n");
     c=getch() ;
     if(c==0 || c==224)// c correspond à une touche étendue et on doit récupérer le 2nd code renvoyé
     {
     c = getch() ; // 2nd code récupéré
-    printf("touche : %d",c);
     }
-while (bouclefleche==0)
+while (bouclefleche==0)//boucle permettant de modifier les variables abscisse et ordonnées du point
 {
 
-    if(c==72)
+    if(c==72)//fleche directionnel haut
     {
         y=y+1;
-        printf("valeur de y : %d\n",y);
         c=0;
         c=getch();
         if(c==0 || c==224)
@@ -34,10 +38,9 @@ while (bouclefleche==0)
         c = getch();
         }
     }
-    if(c==80)
+    if(c==80)//fleche directionnel bas
     {
         y=y-1;
-        printf("valeur de y : %d\n",y);
         c=0;
         c=getch();
         if(c==0 || c==224)
@@ -45,10 +48,9 @@ while (bouclefleche==0)
         c = getch();
         }
     }
-        if(c==77)
+        if(c==77)//fleche directionnel droite
     {
         x=x+1;
-        printf("valeur de x : %d\n",x);
         c=0;
         c=getch();
         if(c==0 || c==224)
@@ -56,10 +58,9 @@ while (bouclefleche==0)
         c = getch();
         }
     }
-        if(c==75)
+        if(c==75)//fleche directionnel gauche
     {
         x=x-1;
-        printf("valeur de x : %d\n",x);
         c=0;
         c=getch();
         if(c==0 || c==224)
@@ -67,6 +68,8 @@ while (bouclefleche==0)
         c = getch();
         }
     }
+    printf("coordonnées: %d,%d\n",x,y);
 }
-#recuperer les abscisses et les ordonée pour la creation d'un point
+//recuperer les abscisses et les ordonée pour la creation d'un point
 }
+
