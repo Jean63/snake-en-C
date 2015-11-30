@@ -1,24 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int carte()
+void carte()
 {
-    int largeur;
     int hauteur;
-    int i;
+    int j;
     hauteur = 20;
-    largeur = 20;
-    i = 0;
-    
-    while (i<20)
+    j=0;
+
+    printf("                 SNAKE               \n");
+    printf("########################################");
+    while (j<hauteur)
     {
-        i=i+1;
-        printf("#");
+        printf("\n#                                      #");
+        j++;
     }
-    if (i == 20)
-    {
-        printf("\n");
-    }
+    printf("\n########################################");
 }
 
 int main()
