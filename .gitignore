@@ -5,10 +5,9 @@ void carte()
 {
     int hauteur;
     int j;
-    hauteur = 20;
+    hauteur = 18;
     j=0;
 
-    printf("                 SNAKE               \n");
     printf("########################################");
     while (j<hauteur)
     {
@@ -31,10 +30,10 @@ int main()
     int y;
     int x;
     int bouclefleche;
-    Coordonnees point;
 
     c=0;
-    Coordonnees point = {0, 0};
+    x=0;
+    y=0;
     bouclefleche=0;
 
     c=getch() ;
