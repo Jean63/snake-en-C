@@ -17,6 +17,10 @@ void carte()
     printf("\n########################################");
 }
 
+void pomme()
+{
+    
+}
 int main()
 {
     typedef struct Coordonnees Coordonnees;
@@ -35,6 +39,12 @@ int main()
     x=0;
     y=0;
     bouclefleche=0;
+
+    carte();
+
+
+
+
 
     c=getch() ;
     if(c==0 || c==224)// c correspond à une touche étendue et on doit récupérer le 2nd code renvoyé
@@ -84,8 +94,7 @@ while (bouclefleche==0)//boucle permettant de modifier les variables abscisse et
         c = getch();
         }
     }
-    printf("coordonnées: (%d|%d)\n",x,y);
+    printf("coordonnees: (%d|%d)\n",x,y);
 }
 //recuperer les abscisses et les ordonée pour la creation d'un point
 }
-
