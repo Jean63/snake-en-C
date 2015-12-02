@@ -19,17 +19,25 @@ void carte()
 
 void pomme()
 {
-    
+    const int minx = 1;
+    const int maxx = 40;
+    const int miny = 1;
+    const int maxy = 20;
+
+    int aleatx;
+    int aleaty;
+
+
+    aleatx = 0;
+    aleaty = 0;
+	srand(time(NULL)); // initialisation de rand
+
+    aleatx = rand()%(maxx-minx)+minx;
+    aleaty = rand()%(maxy-miny)+miny;
 }
+
 int main()
 {
-    typedef struct Coordonnees Coordonnees;
-    struct Coordonnees
-    {
-        int x;//abscisses
-        int y;//Orodnnnées
-    };
-
     int c;
     int y;
     int x;
@@ -41,9 +49,7 @@ int main()
     bouclefleche=0;
 
     carte();
-
-
-
+    pomme();
 
 
     c=getch() ;
