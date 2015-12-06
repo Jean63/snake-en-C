@@ -1,8 +1,2 @@
 # snake-en-C
-- J'ai créé la fonction carte que j'ai appellé dans la fonction main
-
-- J'ai récupéré les touches directionnel pour pouvoir modifier les variables x et y qui correpondent respectivement aux abscisses et aux ordonnées du point qui va bouger
-
-- Je veux créé une fonction pomme qui place une pomme de façon aléatoire sur la carte
-
-- Maintenant je veux creer un point qui bouge en fonctions des variables x et y
+- J'ai créé la carte a l'aide d'un tableau et j'ai mis a l'interieur une pomme selon un code 0,1,2,3,4
