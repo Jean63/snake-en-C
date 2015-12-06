@@ -2,18 +2,22 @@
 #include <stdlib.h>
 #include <time.h>
 
-void carte()
+int main()
 {
 
     int i;
     int j;
+    int c;
+    int bouclefleche;
     const int minx = 1;
     const int maxx = 30;
     const int miny = 1;
     const int maxy = 20;
-
     int aleatx;
     int aleaty;
+    int x;
+    int y;
+    int partie;
 
 
     int tableau[20][30] = {{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -39,13 +43,25 @@ void carte()
 
     aleatx = 0;
     aleaty = 0;
+    c=0;
+    bouclefleche=0;
+    x=8;
+    y=13;
+    partie=0;
+
+
+
+
 	srand(time(NULL)); // initialisation de rand
 
     aleatx = rand()%(maxx-minx)+minx;
     aleaty = rand()%(maxy-miny)+miny;
     tableau[aleaty][aleatx]=2;
+    tableau[13][9]=3;
+    tableau[y][x]=4;
 
-
+while (partie==0)
+{
     for (i = 0; i < 20; i++) {
             printf("\n");
         for(j = 0; j < 30; j++) {
@@ -55,25 +71,12 @@ void carte()
             	printf(" ");
             if (tableau[i][j]==2)
             	printf("o");
+            if (tableau[i][j]==3)
+            	printf("0");
+            if (tableau[i][j]==4)
+                printf("=");
         }
     }
-}
-
-int main()
-{
-    int c;
-    int y;
-    int x;
-    int bouclefleche;
-
-    c=0;
-    x=0;
-    y=0;
-    bouclefleche=0;
-
-    carte();
-
-
     c=getch() ;
     if(c==0 || c==224)// c correspond à une touche étendue et on doit récupérer le 2nd code renvoyé
     {
@@ -122,7 +125,7 @@ while (bouclefleche==0)//boucle permettant de modifier les variables abscisse et
         c = getch();
         }
     }
-    printf("coordonnees: (%d|%d)\n",x,y);
+}
 }
 //recuperer les abscisses et les ordonée pour la creation d'un point
 }
