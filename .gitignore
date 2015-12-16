@@ -154,39 +154,49 @@ int main()
     int Jeu=0;
     int x,y;  // position joueur
     int touche;
+    int direction;
+    direction=0;
     x = 5;
     y = 11;
     touche = 0;
     pomme(0,0);
     while(Jeu==0)
     {
+
         Joueur(x,y);
         touche = MyGetch();
         switch(touche)
         {
         case 'q':
             TryMove(&x,&y,0,-1);
+            direction=1;
             break;
         case 'd':
             TryMove(&x,&y,0,1);
+            direction=3;
             break;
         case 'z':
             TryMove(&x,&y,-1,0);
+            direction=2;
             break;
         case 's':
             TryMove(&x,&y,1,0);
+            direction=4;
         default:
             break;
+        }
+        if (direction==3)
+        {
+            tableau[i][j]=tableau[i-1][j];
         }
         if (tableau[x][y]==1)
         {
             Jeu=1;
-            printf("\n                  Perdu");
+            printf("\n                  Perdu!!!!!");
         }
         if (aleaty==x && aleatx==y)
         {
             pomme();
-            tableau[x-1][y-1]=4;
             score++;
             printf("\n\nscore : %d", score);
         }
