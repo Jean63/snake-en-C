@@ -80,8 +80,6 @@ void afficher()
                     printf(" ");
                 if (tableau[i][j]==2)
                     printf("o");
-                if (tableau[i][j]==3)
-                    printf(">");
             }
         }
 }
@@ -107,16 +105,36 @@ void Joueur(int x,int y)
         printf("\n");
         for(j=0;j<30;j++)
         {
-            if (i==x && j==y)
-                printf("3");
+                if (i==x && j==y)
+                {
+                 tableau[i][j]=3;
+                 if (tableau[i-1][j]==3)
+                 {
+                    tableau[i-1][j]=0;
+                 }
+                if (tableau[i][j-1]==3)
+                {
+                    tableau[i][j-1]=0;
+                }
+                if (tableau[i][j+1]==3)
+                {
+                    tableau[i][j+1]=0;
+                }
+                if (tableau[i+1][j]==3)
+                {
+                    tableau[i+1][j]=0;
+                }
+                }
                 if (tableau[i][j]==1)
                     printf("#");
                 if (tableau[i][j]==0)
                     printf(" ");
                 if (tableau[i][j]==2)
-                    printf("o");
+                    printf("*");
                 if (tableau[i][j]==3)
-                    printf(">");
+                    printf("o");
+                if (tableau[i][j]==4)
+                    printf("o");
         }
     }
 }
@@ -125,8 +143,8 @@ void TryMove(int* x,int* y,int vx,int vy)
 {
     if (tableau[*x+vx][*y+vy]=='1')
         return;
-    (*x)+=vx;
-    (*y)+=vy;
+    (*x)+=vx++;
+    (*y)+=vy++;
 }
 
 int main()
@@ -140,7 +158,7 @@ int main()
     y = 11;
     touche = 0;
     pomme(0,0);
-    while(Jeu==0) // ECHAP
+    while(Jeu==0)
     {
         Joueur(x,y);
         touche = MyGetch();
@@ -168,8 +186,9 @@ int main()
         if (aleaty==x && aleatx==y)
         {
             pomme();
+            tableau[x-1][y-1]=4;
             score++;
-            printf("score : %d", score);
+            printf("\n\nscore : %d", score);
         }
     }
     return 0;
